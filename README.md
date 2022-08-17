@@ -1,31 +1,39 @@
-# election_analysis
+# Election Analysis
 
-## Project Overview
-A Colorado Board of Elections employee has given you the following tasks to complete the election audit of a recent local congressional election.
+## Overview of Project
 
-1. Calculate the total number of votes.
-2. Get a complete list of candidates who received votes.
-3. Calculate the total number of votes each candidate received.
-4. Calculate the percentage of votes each candidate won.
-5. Determine the winner of the election based on popular vote.
+The purpose of this analysis was to audit a congressional election for a precinct in Colorado. The data given included a CSV file containing ballot ID, county and Candidate choice. Python is used to breakdown the data to determine the number and percentage of votes, winning candidate, number and percentage of counties in the precinct, and largest county.
 
-## Resources
--Data Source: election_results.csv
--Software: Python 3.6.1, Visual Studio Code 1.38.1
+## Election-Audit Results
 
-## Summary
-The analysis of the election show that:
--There were "x" votes cast in the election.
--The candidates were:
-  -Candidate 1
-  -Candidate 2
-  -Candidate 3
--The candidate results were:
-  -Candidate 1 received "x%" of the vote and "y" number of votes.
-  -Candidate 2 received "x%" of the vote and "y" number of votes.
-  -Candidate 3 received "x%" of the vote and "y" number of votes.
- -The winner of the election was candidate (1, 2, or 3), who received "x%" of the vote and "y" number of votes.
- 
- ## Challenge Overview
- 
- ## Challenge Summary
+### Analysis of Vote Count
+
+There are 369,711 votes being analyzed in this challenge. This number was found with the code "total_votes = total_votes + 1" within a for loop. This loop ran through all votes and adds a new vote to the total count each time the loop is passed.
+
+### Vote Breakdown
+
+Like the vote count, the number of votes and percentage of votes for each county was determined using for loops. The number of votes was found with the code "county_votes[county] += 1". Using the code "vote_percentage = (float(votes) / float(total_votes)) * 100", the vote percentage for each county was determined.
+
+The votes by county breakdown follows:
+
+Jefferson: 10.5% (38,855)
+Denver: 82.8% (306,055)
+Arapahoe: 6.7% (24,801)
+
+As displayed, Denver had the largest number of votes.
+
+### Candidate Breakdown
+
+Another use for for loops in this analysis was for the candidate breakdown. The code provides the breakdown of the number of votes and percentage of total votes that each candidate received. The number of votes was found with the code "votes = candidate_votes.get(candidate_name)". Using the code "vote_percentage = float(votes) / float(total_votes) * 100", the vote percentage for each candidate was determined.
+
+The votes for each candidate is below:
+
+Charles Casper Stockham: 23.0% (85,213)
+Diana DeGette: 73.8% (272,892)
+Raymon Anthony Doane: 3.1% (11,606)
+
+As displayed, Diana DeGette won the election. She won with 272,892 votes, which was 73.8% of the total votes. 
+
+## Election-Audit Summary
+
+This Python script can be used for any election only with some modifications. This can be done for presidential election with only changing the names of "counties" to "states". Additionally, more candidates and counties could be added. By changing names and numbers of specific variables such as candidate count, this script can be modified for any election. 
